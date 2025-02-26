@@ -1,5 +1,3 @@
-Number Data Type Answers:
-
 #1.Create a program that takes a float number as input and rounds it to 2 decimal places.
   def round_number():
     num = float(input("Enter a float number: "))
