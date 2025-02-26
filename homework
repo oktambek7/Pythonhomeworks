@@ -1,0 +1,264 @@
+Number Data Type Answers:
+
+#1.Create a program that takes a float number as input and rounds it to 2 decimal places.
+  def round_number():
+    num = float(input("Enter a float number: "))
+    print(f"Rounded to 2 decimal places: {round(num, 2)}")
+
+#2.Write a Python file that asks for three numbers and outputs the largest and smallest.
+  def largest_and_smallest():
+    nums = [float(input(f"Enter number {i+1}: ")) for i in range(3)]
+    print(f"Largest: {max(nums)}, Smallest: {min(nums)}")
+
+#3.Create a program that converts kilometers to meters and centimeters.
+  def km_to_m_cm():
+    km = float(input("Enter distance in kilometers: "))
+    meters = km * 1000
+    centimeters = km * 100000
+    print(f"Meters: {meters}, Centimeters: {centimeters}")
+
+#4.Write a program that takes two numbers and prints out the result of integer division and theremainder.
+  def integer_division():
+    num1 = int(input("Enter first number: "))
+    num2 = int(input("Enter second number: "))
+    print(f"Integer division result: {num1 // num2}, Remainder: {num1 % num2}")
+
+#5.Make a program that converts a given Celsius temperature to Fahrenheit.
+  def celsius_to_fahrenheit():
+    celsius = float(input("Enter temperature in Celsius: "))
+    fahrenheit = (celsius * 9/5) + 32
+    print(f"Temperature in Fahrenheit: {fahrenheit}")
+
+#6.Create a program that accepts a number and returns the last digit of that number.
+def last_digit():
+    num = int(input("Enter a number: "))
+    print(f"Last digit: {abs(num) % 10}")
+
+#7.Create a program that takes a number and checks if it’s even or not.
+def check_even():
+    num = int(input("Enter a number: "))
+    print("Even" if num % 2 == 0 else "Odd")
+
+if __name__ == "__main__":
+    print("Choose a program to run:")
+    print("1. Round a number")
+    print("2. Find largest and smallest of three numbers")
+    print("3. Convert kilometers to meters and centimeters")
+    print("4. Perform integer division and find remainder")
+    print("5. Convert Celsius to Fahrenheit")
+    print("6. Find the last digit of a number")
+    print("7. Check if a number is even or odd")
+    
+    choice = int(input("Enter your choice (1-7): "))
+    
+    functions = [round_number, largest_and_smallest, km_to_m_cm, integer_division, 
+                 celsius_to_fahrenheit, last_digit, check_even]
+    
+    if 1 <= choice <= 7:
+        functions[choice - 1]()
+    else:
+        print("Invalid choice!")
+
+String Data Type Answers:
+
+#1.Create a program to ask name and year of birth from user and tell them their age.
+
+name = input("What is your name? ")
+age = int(input("Age: "))
+print("Your name is" + name + "and you are" + str(age) + "years old.")
+print(f"Your name is {name} and you are {age} years old.")
+
+#2.Extract car names from this text: txt = 'LMaasleitbtui'
+txt = 'LMaasleitbtui'
+
+#3. Write a Python program to Take a string input from the user.
+    #Print the length of the string.
+    #Convert the string to uppercase and lowercase
+
+a=input("Enter a word:")
+print(len(a))
+print(a.upper())
+print(a.lower())
+
+#4.Write a Python program to check if a given string is palindrome or not.
+txt = input("Enter a string to check if it is a palindrome: ")
+def is_palindrome(txt):
+    if txt==txt[::-1]:
+        return True
+    else:
+        return False
+
+if is_palindrome(txt):
+    print(f"Yes")
+else:
+    print("no")\
+#5.Write a program that counts the number of vowels and consonants in a given string.
+text = 'fdwefdwfwaf wefdawesdf aEdde'
+print(text.count('a'))
+print(text.count('w'))
+print(text.count('f'))
+#6.Write a Python program to check if one string contains another.
+def contains_substring(main_string, sub_string):
+    if sub_string in main_string:
+        return True
+    else:
+        return False
+main_string = input("Enter the main string:")
+sub_string = input("Enter the substring to check:")
+if contains_substring(main_string, sub_string):
+    print(f"'{sub_string}' is found in '{main_string}'.")
+else:
+    print(f"'{sub_string}' is not found in '{main_string}'.")
+
+#7.Ask the user to input a sentence and a word to replace. Replace that word with another word provided by the user.
+matn = 'My name is Oktam'
+print(matn.replace('Oktam', 'Oybek'))
+
+#8.Write a program that asks the user for a string and prints the first and last characters of the string.
+
+a=input("Enter a word:")
+first_char=a[0]
+last_char=a[-1]
+print(f"The first character is: {first_char}")
+print(f"The last character is: {last_char}")
+
+#9.Ask the user for a string and print the reversed version of it.
+word = input("Enter word:")
+word_reverse=word[::-1]
+print(f'{word_reverse=}')
+print(word==word_reverse)
+#10.Write a program that asks the user for a sentence and prints the number of words in it.
+word=input("Enter word:")
+num_of_words=len(word)
+print(f"The number of words in the sentence is:{num_of_words}")
+
+#11.Write a program to check if a string contains any digits.
+
+def contains_digits(s):
+    for char in s:
+        if char.isdigit():
+            return True
+        return False
+    
+user_string=input("Entera string:")
+if contains_digits(user_string):
+    print("The string contains digits.")
+else:
+    print("The string does not contain any digits.")
+#12.Write a program that takes a list of words and joins them into a single string, separated by a character.
+a = [1,2,3,4]
+a.append(5)
+print(a)
+
+#13.Ask the user for a string and remove all spaces from it.
+
+sentence=input('Enter string:')
+remove_space=sentence.replace(" ", "")
+print("Sentence witout space:", remove_space)
+ #14.Write a program to ask for two strings and check if they are equal or not.
+
+sen1=input("Enter first sentence:")
+sen2=input("Enter second sentence:")
+if sen1==sen2:
+    print("The sentences are equal.")
+else:
+    print("sen1 doesn't equal to sen2.")
+
+#15.Ask the user for a sentence and create an acronym from the first letters of each word.
+
+sentence=input("Enter sentence:")
+words=sentence.split()
+acronym=''.join(word[0].upper() for word in words)
+print("The acronym i:", acronym)
+
+ #16.Write a program that asks the user for a string and a character, then removes all occurrences of that character from the string.
+
+user_string=input("Please enter a string:")
+char_to_remove=input("Please enter a character to remove:")
+modified_string=user_string.replace(char_to_remove, "")
+print("String after removing the character:", modified_string)
+
+#17.Ask the user for a string and replace all the vowels with a symbol   
+    
+string=input("Enter word:")
+for vowel in "Wassuup":
+ string=string.replace(vowel, "$")
+print(string)
+
+#18.Write a program that checks if a string starts with one word and ends with another.
+string=input("Enter a string:")
+start_word=input("Enter the starting word:")
+end_word=input("Enter the ending word:")
+if string.startswith(start_word) and string.endswith(end_word):
+    print("The string starts with '{}' and ends with '{}'.".format(start_word, end_word))
+else:
+    print("The sring doesn't match the given conditions.")
+  
+Boolean Data Type Answers:
+
+#1.Write a program that accepts a username and password and checks if both are not empty.
+
+username=input("Enter username:")
+password=input("Enter password:")
+if username==""or password=="":
+    print("Error.")
+else:
+    print("Credentials are valid.")
+
+#2.Create a program that checks if two numbers are equal and outputs a message if they are.
+first_num=input('Enter first number:')
+second_num=input('Enter second number:')
+if first_num==second_num:
+    print('They are aqual')
+else:
+    print('They are not equal.')
+#3.Write a program that checks if a number is positive and even.
+
+a=int(input('Enter number:'))
+if a>0 and a%2==0:
+ print(f'{a} is is both positive and even.')
+else:
+ print(f'{a} is not even number.')
+
+ #4.Write a program that takes three numbers and checks if all of them are different.
+a=int(input("Enter 1st number:"))
+b=int(input("Enter 2nd number:"))
+c=int(input("Enter 3rd number:"))
+if a==b==c:
+   print("They are same")
+else:
+   print("They are different")
+
+#5.Create a program that accepts two strings and checks if they have the same length.
+
+string_first=input("Enter 1st word:")
+string_second=input("Enter 2nd word:")
+if len(string_first)==len(string_second):
+   print("They have the same lenghs.")
+else:
+   print("They have different lenghs.")
+
+#6.Create a program that accepts a number and checks if it’s divisible by both 3 and 5.
+
+a=int(input("Enter number"))
+if a%3==0 and a%5==0:
+ print("a is divisable to both 3 and 5")
+else:
+   print("Error")
+
+#7.Write a program that checks if the sum of two numbers is greater than 50.8. Create a program that checks if a given number is between 10 and 20 (inclusive)
+
+#part 1
+first_num=int(input("Enter num1: "))
+second_num=int(input("Eneter num2: "))
+if (first_num)+(second_num)>50.8:
+   print("yes")
+else:
+   print("No")
+
+#part 2
+a=int(input("Enter number"))
+if 10 <= a <= 20:
+   print("yes")
+else:
+   print("No")
